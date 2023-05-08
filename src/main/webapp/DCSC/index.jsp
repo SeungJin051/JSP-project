@@ -31,7 +31,7 @@
         <h1><span style="color:rgb(254, 68, 68)">D</span><span style="color:rgb(0, 0, 0)">IT</span> Computer Software
             Department
         </h1>
-        <p>동의과학대학교 컴퓨터소프트웨어과 커뮤니티에 오신걸 환영합니다!</p>
+        <p>동의과학대학교 컴퓨터소프트웨어과 커뮤니티에 오신걸 환영합니다!!</p>
     </div>
 
     <div class="box container">
