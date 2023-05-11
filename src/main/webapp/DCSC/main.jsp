@@ -89,6 +89,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">채팅</a></li>
+                            <li><a class="dropdown-item" href="pass.jsp">관리자메뉴</a></li>
                         </ul>
                     </li>
                 </ul>
