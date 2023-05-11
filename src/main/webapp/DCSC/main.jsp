@@ -5,93 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/NavFooter.css">
+<!-- 부트스트랩  -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 부트스트랩  -->
 <title>DCSC</title>
 <style>
-    #icon {
-        margin-top: 4px;
-        margin-right: 4px;
-        font-size: 2rem;
-    }
-
-    .footer-info {
-        margin-top: -100px;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    footer #footer-bor {
-        margin-top: -70px;
-        display: flex;
-    }
-
-    footer li {
-        float: left;
-    }
-
-    .form-control {
-        border-radius: 15px;
-    }
-
-    .nav-job {
-        color: black;
-    }
-
-    .nav-hr {
-        padding-top: 7px;
-    }
-
-    #navbarDropdown {
-        margin-right: 80px;
-    }
-
-    .nav-item {
-        margin: 15px;
-        font-weight: 600;
-    }
-
-    .nav-item :hover {
-        color: #6CB52D
-    }
-
-    .dit-img {
-        width: 150px;
-        margin-right: 0px;
-    }
-
-    .navbar {
-        padding: 15px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .w3-container {
-        margin-bottom: 40px;
-    }
-
-    .main-images {
-        border-radius: 8px;
-        margin-bottom: 40px;
-        max-width: 800px;
-        height: 500px;
-    }
-
-    #main h1 {
-        margin-left: 30px;
-    }
-
-    .card-group {
-        margin: 30px;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
     @media (max-width: 800px) {
 
         footer {
@@ -100,6 +22,7 @@
 
     }
 </style>
+
 <script>
     function w3_open() {
         document.getElementById("main").style.marginLeft = "25%";
@@ -112,15 +35,12 @@
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("openNav").style.display = "inline-block";
     }
-
-
 </script>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="main.html"><img src="images/dit.png" alt="" class="dit-img"></a>
-            <a class=" navbar-brand" href="#"></a>
+            <a href="main.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -147,7 +67,7 @@
                         |
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-job" href="#">채용공고</a>
+                        <a class="nav-link nav-job" href="job.jsp">채용공고</a>
                     </li>
                     <li class="nav-item nav-hr">
                         |
@@ -219,8 +139,7 @@
         <div class="overflow-hidden" style="max-height: 30vh;">
             <div class="container px-5">
                 <img src="https://static.standard.co.uk/2021/06/07/12/erik-jan-leusink-IbPxGLgJiMI-unsplash.jpg?width=968&auto=webp&quality=50&crop=968%3A645%2Csmart"
-                    class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500"
-                    loading="lazy">
+                    class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500">
             </div>
         </div>
     </div>
