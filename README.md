@@ -22,10 +22,23 @@ https://uni.rejoice-it.com/entry/Git-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%EC%97
 | 이름 | 데이터 타입 | 설명 |
 | --- | --- | --- |
 | Free Board | VARCHAR(50) | 자유게시판 |
+
+| 이름 | 데이터 타입 | 설명 |
+| --- | --- | --- |
 | Student | VARCHAR(50) | 재학생 |
+
+| 이름 | 데이터 타입 | 설명 |
+| --- | --- | --- |
 | Graduate | VARCHAR(50) | 졸업생 |
+
+| 이름 | 데이터 타입 | 설명 |
+| --- | --- | --- |
 | Second Hand | VARCHAR(50) | 중고장터 |
+
+| 이름 | 데이터 타입 | 설명 |
+| --- | --- | --- |
 | Notice | VARCHAR(50) | 공지사항 |
-| Employ | VARCHAR(50) | 채용공고 |
-| Search | VARCHAR(50) | 검색 |
+
+| 이름 | 데이터 타입 | 설명 |
+| --- | --- | --- |
 | Profile | VARCHAR(50) | 프로필 |
