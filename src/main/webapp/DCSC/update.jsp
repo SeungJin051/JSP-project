@@ -53,7 +53,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="main.html"><img src="img/dit.png" alt="" class="dit-img"></a>
+            <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -69,7 +69,7 @@
                         <a class="nav-link" href="member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">졸업생</a>
+                        <a class="nav-link" href="#">게시글관리</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.jsp">장터관리</a>
@@ -77,11 +77,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="announcement.jsp">공지사항</a>
                     </li>
-              
-                    <li class="nav-item">
-                        <a class="nav-link nav-job" href="#">채용공고</a>
-                    </li>
-           
+             
                     <li class="nav-item">
                         <a class="nav-link nav-job" href="main.jsp">나가기</a>
                     </li>
@@ -119,7 +115,7 @@
         </div>
         <br>
         <div class="text-center">
-                    <input type="submit" value="변경" class="btn btn-success btn-lg btn">  
+                    <input type="submit" value="변경" class="btn btn-primary btn-lg btn">  
                     <input type="button" value="삭제" class="btn btn-danger btn-lg btn">
                     <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='member.jsp'">
             </div>
