@@ -33,6 +33,7 @@
         </h1>
         <p>동의과학대학교 컴퓨터소프트웨어과 커뮤니티에 오신걸 환영합니다!!</p>
     </div>
+    <p> ㅁㄴㅇ</p>
 
     <div class="box container">
         <div class=" container">
