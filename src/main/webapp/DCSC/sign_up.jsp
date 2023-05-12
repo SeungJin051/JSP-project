@@ -25,6 +25,9 @@
     .member{
         margin-top: 100px;
     }
+    button{
+    	margin-right: 20px;
+    }
 </style>
 <script>
     function w3_open() {
@@ -45,7 +48,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="main.html"><img src="img/dit.png" alt="" class="dit-img"></a>
+            <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,7 +64,7 @@
                         <a class="nav-link" href="member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">졸업생</a>
+                        <a class="nav-link" href="#">게시글관리</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.jsp">장터관리</a>
@@ -69,11 +72,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="announcement.jsp">공지사항</a>
                     </li>
-              
-                    <li class="nav-item">
-                        <a class="nav-link nav-job" href="#">채용공고</a>
-                    </li>
-           
+             
                     <li class="nav-item">
                         <a class="nav-link nav-job" href="main.jsp">나가기</a>
                     </li>
@@ -102,7 +101,10 @@
                     <td>sy010706@naver.com</td>
                     <td>2학년</td>
                     <td>병장</td>
-                    <td><button>승인</button></td>
+                    <td>
+                    <button class="btn btn-primary">승인</button >
+                    <button class="btn btn-danger">취소</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
