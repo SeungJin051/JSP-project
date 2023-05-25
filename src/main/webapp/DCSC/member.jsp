@@ -59,7 +59,7 @@
                         <a class="nav-link" href="member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">게시글관리</a>
+                        <a class="nav-link" href="graduateboard.jsp"">게시글관리</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.jsp">장터관리</a>
