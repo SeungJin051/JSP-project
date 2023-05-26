@@ -51,9 +51,9 @@
                         maxlength="16">
                 </div>
                 <button type="submit" class="btn btn-primary bg-gradient login"
-                    onclick="location.href='main.html'">로그인</button>
+                    onclick="location.href='main.jsp'">로그인</button>
                 <button type="button" class="btn btn-danger bg-gradient sign-up"
-                    onclick="location.href='signUp.html'">회원가입</button>
+                    onclick="location.href='signUp.jsp'">회원가입</button>
         </form>
     </div>
     </div>
