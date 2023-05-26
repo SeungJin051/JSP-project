@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DCSC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
+<!-- 부트스트랩  -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
 <!-- 부트스트랩  -->
     <style>
        
@@ -54,7 +53,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="main.html"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -70,7 +69,7 @@
                         <a class="nav-link" href="member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">졸업생</a>
+                        <a class="nav-link" href="graduateboard.jsp">게시글관리</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.jsp">장터관리</a>
@@ -78,11 +77,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="announcement.jsp">공지사항</a>
                     </li>
-              
-                    <li class="nav-item">
-                        <a class="nav-link nav-job" href="#">채용공고</a>
-                    </li>
-           
+             
                     <li class="nav-item">
                         <a class="nav-link nav-job" href="main.jsp">나가기</a>
                     </li>
@@ -120,7 +115,7 @@
         </div>
         <br>
         <div class="text-center">
-                    <input type="submit" value="변경" class="btn btn-success btn-lg btn">  
+                    <input type="submit" value="변경" class="btn btn-primary btn-lg btn">  
                     <input type="button" value="삭제" class="btn btn-danger btn-lg btn">
                     <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='member.jsp'">
             </div>

@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<title>DCSC</title>
+<head>
 <meta charset="UTF-8">
+<title>DCSC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
 <!-- 부트스트랩  -->
@@ -11,6 +12,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 <!-- 부트스트랩  -->
 <style>
     @media (max-width: 800px) {
@@ -78,23 +80,23 @@
     </nav>
 
     <div class="container member">
-        <h1 >회원관리</h1>
+        <h1 >졸업생 게시글 관리</h1>
         <table class="table talbe-hover">
             <tbody>
                 <tr>
-                    <td><B>학번</td>
-                    <td><B>이름</td>
-                    <td><b>이메일</td>
-                    <td><b>학년</td>
-                    <td><b>직책</td>
+                    <td><B>글번호</td>
+                    <td><B>제목</td>
+                    <td><b>작성자</td>
+                    <td><b>학번</td>
+                    <td><b>날짜</td>
                 </tr>
     
                 <tr>
-                    <td><A href="update.jsp">202231747</A></td>
+					<td>1</td>
+                    <td><A href="graduateboardupdate.jsp">취업후기</A></td>
                     <td>김신영</td>
-                    <td>sy010706@naver.com</td>
-                    <td>2학년</td>
-                    <td>병장</td>
+                    <td>202231747</td>
+                    <td>2022-05-25</td>
                 </tr>
             </tbody>
         </table>

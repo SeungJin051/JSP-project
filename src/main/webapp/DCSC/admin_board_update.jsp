@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<title>DCSC</title>
+<head>
 <meta charset="UTF-8">
+<title>DCSC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
 <!-- 부트스트랩  -->
@@ -11,6 +12,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 <!-- 부트스트랩  -->
 <style>
     @media (max-width: 800px) {
@@ -77,31 +79,47 @@
         </div>
     </nav>
 
-    <div class="container member">
-        <h1 >회원관리</h1>
-        <table class="table talbe-hover">
-            <tbody>
-                <tr>
-                    <td><B>학번</td>
-                    <td><B>이름</td>
-                    <td><b>이메일</td>
-                    <td><b>학년</td>
-                    <td><b>직책</td>
-                </tr>
-    
-                <tr>
-                    <td><A href="update.jsp">202231747</A></td>
-                    <td>김신영</td>
-                    <td>sy010706@naver.com</td>
-                    <td>2학년</td>
-                    <td>병장</td>
-                </tr>
-            </tbody>
-        </table>
+</head>
+<body>
+
+   
+
+    <div class="container update">
+        <br>
+        <h2 class="text-center font-weight-bold">게시글 관리</h2>
+        <hr/>
+        <form action="boardUpdatePro.jsp" method="post">
+            <div class="form-group">
+            <label for="글번호">글번호</label>
+            <input type="text" class="form-control" id="num" name="num" value="1" readonly>
+          </div>
+          <div class="form-group">
+              <label for="SUBJECT">제목</label>
+              <input type="text" class="form-control" id="SUBJECT" name="SUBJECT"  value="취업후기" readonly>
+          </div>
+          <div class="form-group">
+          <label for="CONTENT">내용</label>
+        </div>
+        <textarea class="form-control col-sm-5" name="CONTENT" id="CONTENT" cols="30" rows="10"></textarea>
+        <div class="form-group">
+        <label for="WRITER">작성자</label>
+        <input type="text" class="form-control" id="WRITER" name="WRITER" value="김신영" readonly>
+      </div>
+        <div class="form-group">
+        <label for="stnum">학번</label>
+        <input type="text" class="form-control" id="stnum" name="stnum" value="202231747" readonly>
+      </div>
+        <div class="form-group">
+          <label for="REGDATE">날짜</label>
+          <input type="date" class="form-control" id="REGDATE" name="REGDATE" value="" readonly>
+        </div>
+        <br>
+        <div class="text-center">
+                    <input type="button" value="삭제" class="btn btn-danger btn-lg btn" onclick="location.href='graduateboard.jsp'">
+                    <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='graduateboard.jsp'">
+            </div>
+        </form>
     </div>
-
-
-
+    
 </body>
-
 </html>

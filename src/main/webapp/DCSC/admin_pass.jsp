@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>DSCS</title>
-</head>
+    <title>Document</title>
+
 <style>
     .DSCS::first-letter {
         color: #ff0000;
@@ -46,7 +46,7 @@
                   </div>
                   <div class="d-grid gap-2 d-md-block btn" role="group" aria-label="Basic example">
 
-                  <button class="w-100 btn btn-lg btn-primary" type="button" onclick="location.href='admin_member.jsp'">로그인</button>
+                  <button class="w-100 btn btn-lg btn-primary" type="button" onclick="location.href='sign_up.jsp'">로그인</button>
                   <button class="w-100 btn btn-lg btn-danger" type="button" onclick="location.href='main.jsp'">나가기</button>
                 </div>
 
