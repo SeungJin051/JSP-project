@@ -79,31 +79,47 @@
         </div>
     </nav>
 
-    <div class="container member">
-        <h1 >졸업생 게시글 관리</h1>
-        <table class="table talbe-hover">
-            <tbody>
-                <tr>
-                    <td><B>글번호</td>
-                    <td><B>제목</td>
-                    <td><b>작성자</td>
-                    <td><b>학번</td>
-                    <td><b>날짜</td>
-                </tr>
-    
-                <tr>
-					<td>1</td>
-                    <td><A href="graduateboardupdate.jsp">취업후기</A></td>
-                    <td>김신영</td>
-                    <td>202231747</td>
-                    <td>2022-05-25</td>
-                </tr>
-            </tbody>
-        </table>
+</head>
+<body>
+
+   
+
+    <div class="container update">
+        <br>
+        <h2 class="text-center font-weight-bold">게시글 관리</h2>
+        <hr/>
+        <form action="boardUpdatePro.jsp" method="post">
+            <div class="form-group">
+            <label for="글번호">글번호</label>
+            <input type="text" class="form-control" id="num" name="num" value="1" readonly>
+          </div>
+          <div class="form-group">
+              <label for="SUBJECT">제목</label>
+              <input type="text" class="form-control" id="SUBJECT" name="SUBJECT"  value="취업후기" readonly>
+          </div>
+          <div class="form-group">
+          <label for="CONTENT">내용</label>
+        </div>
+        <textarea class="form-control col-sm-5" name="CONTENT" id="CONTENT" cols="30" rows="10"></textarea>
+        <div class="form-group">
+        <label for="WRITER">작성자</label>
+        <input type="text" class="form-control" id="WRITER" name="WRITER" value="김신영" readonly>
+      </div>
+        <div class="form-group">
+        <label for="stnum">학번</label>
+        <input type="text" class="form-control" id="stnum" name="stnum" value="202231747" readonly>
+      </div>
+        <div class="form-group">
+          <label for="REGDATE">날짜</label>
+          <input type="date" class="form-control" id="REGDATE" name="REGDATE" value="" readonly>
+        </div>
+        <br>
+        <div class="text-center">
+                    <input type="button" value="삭제" class="btn btn-danger btn-lg btn" onclick="location.href='graduateboard.jsp'">
+                    <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='graduateboard.jsp'">
+            </div>
+        </form>
     </div>
-
-
-
+    
 </body>
-
 </html>

@@ -2,9 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<title>회원가입관리</title>
 <meta charset="UTF-8">
-<title>DCSC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
 <!-- 부트스트랩  -->
@@ -12,9 +11,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
 <!-- 부트스트랩  -->
+
 <style>
+    
     @media (max-width: 800px) {
 
         footer {
@@ -24,6 +24,9 @@
     }
     .member{
         margin-top: 100px;
+    }
+    button{
+    	margin-right: 20px;
     }
 </style>
 <script>
@@ -80,23 +83,28 @@
     </nav>
 
     <div class="container member">
-        <h1 >졸업생 게시글 관리</h1>
+        <h1 >가입관리</h1>
         <table class="table talbe-hover">
             <tbody>
                 <tr>
-                    <td><B>글번호</td>
-                    <td><B>제목</td>
-                    <td><b>작성자</td>
-                    <td><b>학번</td>
-                    <td><b>날짜</td>
+                    <td><B>학번</td>
+                    <td><B>이름</td>
+                    <td><b>이메일</td>
+                    <td><b>학년</td>
+                    <td><b>직책</td>
+                    <td><b>가입승인</td>
                 </tr>
     
                 <tr>
-					<td>1</td>
-                    <td><A href="graduateboardupdate.jsp">취업후기</A></td>
-                    <td>김신영</td>
                     <td>202231747</td>
-                    <td>2022-05-25</td>
+                    <td>김신영</td>
+                    <td>sy010706@naver.com</td>
+                    <td>2학년</td>
+                    <td>병장</td>
+                    <td>
+                    <button class="btn btn-primary">승인</button >
+                    <button class="btn btn-danger">취소</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
