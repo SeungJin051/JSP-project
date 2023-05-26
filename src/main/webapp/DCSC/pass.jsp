@@ -46,7 +46,7 @@
                   </div>
                   <div class="d-grid gap-2 d-md-block btn" role="group" aria-label="Basic example">
 
-                  <button class="w-100 btn btn-lg btn-primary" type="button" onclick="location.href='member.jsp'">로그인</button>
+                  <button class="w-100 btn btn-lg btn-primary" type="button" onclick="location.href='sign_up.jsp'">로그인</button>
                   <button class="w-100 btn btn-lg btn-danger" type="button" onclick="location.href='main.jsp'">나가기</button>
                 </div>
 

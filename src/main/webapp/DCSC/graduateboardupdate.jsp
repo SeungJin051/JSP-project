@@ -12,8 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- 부트스트랩  -->
-    <style>
-       
+<style>
     @media (max-width: 800px) {
 
         footer {
@@ -23,14 +22,6 @@
     }
     .member{
         margin-top: 100px;
-    }
-
-    .update {
-        margin-top: 50px;
-    }
-    .btn{
-        margin-right: 20px;
-        margin-bottom: 100px;
     }
 </style>
 <script>
@@ -46,11 +37,10 @@
         document.getElementById("openNav").style.display = "inline-block";
     }
 
-    
-</script>
-</head>
-<body>
 
+</script>
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
@@ -87,41 +77,47 @@
         </div>
     </nav>
 
+</head>
+<body>
+
+   
 
     <div class="container update">
         <br>
-        <h2 class="text-center font-weight-bold">회원 정보 수정</h2>
+        <h2 class="text-center font-weight-bold">게시글 관리</h2>
         <hr/>
-        <form action="updatePro.jsp" method="post">
+        <form action="boardUpdatePro.jsp" method="post">
             <div class="form-group">
-            <label for="num">학번:</label>
-            <input type="text" class="form-control" id="num" name="num"  readonly>
+            <label for="글번호">글번호</label>
+            <input type="text" class="form-control" id="num" name="num" value="1" readonly>
           </div>
           <div class="form-group">
-              <label for="name">이름:</label>
-              <input type="text" class="form-control" id="name" name="name" >
+              <label for="SUBJECT">제목</label>
+              <input type="text" class="form-control" id="SUBJECT" name="SUBJECT"  value="취업후기" readonly>
           </div>
           <div class="form-group">
-          <label for="mail">이메일:</label>
-          <input type="text" class="form-control" id="mail" name="mail" >
+          <label for="CONTENT">내용</label>
         </div>
+        <textarea class="form-control col-sm-5" name="CONTENT" id="CONTENT" cols="30" rows="10"></textarea>
         <div class="form-group">
-        <label for="grade">학년:</label>
-        <input type="text" class="form-control" id="grade" name="grade" >
+        <label for="WRITER">작성자</label>
+        <input type="text" class="form-control" id="WRITER" name="WRITER" value="김신영" readonly>
       </div>
         <div class="form-group">
-          <label for="position">직책:</label>
-          <input type="password" class="form-control" id="position" name="position">
+        <label for="stnum">학번</label>
+        <input type="text" class="form-control" id="stnum" name="stnum" value="202231747" readonly>
+      </div>
+        <div class="form-group">
+          <label for="REGDATE">날짜</label>
+          <input type="date" class="form-control" id="REGDATE" name="REGDATE" value="" readonly>
         </div>
         <br>
         <div class="text-center">
-                    <input type="submit" value="변경" class="btn btn-primary btn-lg btn">  
-                    <input type="button" value="삭제" class="btn btn-danger btn-lg btn">
-                    <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='member.jsp'">
+                    <input type="button" value="삭제" class="btn btn-danger btn-lg btn" onclick="location.href='graduateboard.jsp'">
+                    <input type="button" value="목록" class="btn btn-secondary btn-lg btn" onclick="location.href='graduateboard.jsp'">
             </div>
         </form>
     </div>
     
 </body>
 </html>
-
