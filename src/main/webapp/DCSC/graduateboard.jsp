@@ -1,12 +1,10 @@
-<%@page import="java.util.List"%>
-<%@page import="com.board.LoginDAO"%>
-<%@page import="com.board.LoginDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<title>DCSC</title>
+<head>
 <meta charset="UTF-8">
+<title>DCSC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
 <!-- 부트스트랩  -->
@@ -14,6 +12,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 <!-- 부트스트랩  -->
 <style>
     @media (max-width: 800px) {
@@ -46,7 +45,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="admin_sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a href="main.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -55,19 +55,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_sign_up.jsp">회원가입관리</a>
+                        <a class="nav-link" href="sign_up.jsp">회원가입관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_member.jsp">회원관리</a>
+                        <a class="nav-link" href="member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_board.jsp">게시글관리</a>
+                        <a class="nav-link" href="graduateboard.jsp">게시글관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_shop.jsp">장터관리</a>
+                        <a class="nav-link" href="shop.jsp">장터관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_writing.jsp">공지사항</a>
+                        <a class="nav-link" href="announcement.jsp">공지사항</a>
                     </li>
              
                     <li class="nav-item">
@@ -80,42 +80,29 @@
     </nav>
 
     <div class="container member">
-        <h1>가입관리</h1>
-        <!-- 관리자 페이지 -->
+        <h1 >졸업생 게시글 관리</h1>
         <table class="table talbe-hover">
             <tbody>
                 <tr>
-                    <th>학번</th>
-                    <th>이름</th>
-                    <th>이메일</th>
-                    <th>학년</th>
-                    <th>직책</th>
-                    <th>가입승인</th>
+                    <td><B>글번호</td>
+                    <td><B>제목</td>
+                    <td><b>작성자</td>
+                    <td><b>학번</td>
+                    <td><b>날짜</td>
                 </tr>
-                <% 
-                // 회원가입 신청 목록을 조회하고 표시합니다.
-                LoginDAO loginDAO = new LoginDAO();
-                List<LoginDTO> joinRequests = loginDAO.getJoinRequests();
-                for (LoginDTO joinRequest : joinRequests) {
-                %>
+    
                 <tr>
-                    <td><%= joinRequest.getStudentNumber() %></td>
-                    <td><%= joinRequest.getName() %></td>
-                    <td><%= joinRequest.getEmail() %></td>
-                    <td><%= joinRequest.getGrade() %></td>
-                    <td><%= joinRequest.getPosition() %></td>
-                    <td>
-                        <form action="approval.jsp" method="post">
-                            <input type="hidden" name="studentNumber" value="<%= joinRequest.getStudentNumber() %>">
-                            <button type="submit" name="action" value="approve" class="btn btn-primary">승인</button>
-                            <button type="submit" name="action" value="cancel" class="btn btn-danger">취소</button>
-                        </form>
-                    </td>
+					<td>1</td>
+                    <td><A href="graduateboardupdate.jsp">취업후기</A></td>
+                    <td>김신영</td>
+                    <td>202231747</td>
+                    <td>2022-05-25</td>
                 </tr>
-                <% } %>
             </tbody>
         </table>
     </div>
+
+
 
 </body>
 

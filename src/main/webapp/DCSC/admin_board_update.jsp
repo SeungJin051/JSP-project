@@ -41,7 +41,7 @@
 
 
 </script>
-
+<!-- ㅁㄴㅇㄹㅁㄴㅇㄹㅁㅇ -->
 <body>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -72,7 +72,7 @@
                     <li class="nav-item">
                         <a class="nav-link nav-job" href="main.jsp">나가기</a>
                     </li>
-                </ul>
+                </ul> 
   
             </div>
         </div>

@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
 <head>
     <title>DCSC</title>
     <meta charset="utf-8">
@@ -17,11 +15,12 @@
 
     img {
         margin-bottom: 30px;
+        max-width: 100%;
+        height: auto;
     }
-    
 
     .box {
-        width: 500px;
+        width: 375px;
     }
 </style>
 
@@ -35,27 +34,40 @@
     </div>
 
     <div class="box container">
-        <div class=" container">
-            <div class="container">
-                <img src="images/indexBanner.png" alt="" width="460px">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="images/indexBanner.png" alt="" class="img-fluid">
+                </div>
             </div>
             <form action="loginPro.jsp" method="get">
                 <div class="mb-3">
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
                     <label for="studentNumber" class="form-label">학번</label>
                     <input type="text" class="form-control" id="studentNumber" placeholder="학번" name="studentNumber" maxlength="10"
                         required>
+=======
+                    <label for="stNum" class="form-label">학번</label>
+                    <input type="text" class="form-control" id="stNum" placeholder="학번" name="stNu" maxlength="10" required>
+>>>>>>> 9177ea5 add
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label">비밀번호</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="비밀번호" name="pwd" required
-                        maxlength="16">
+                    <input type="password" class="form-control" id="pwd" placeholder="비밀번호" name="pwd" required maxlength="16">
                 </div>
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
                 <button type="submit" class="btn btn-primary bg-gradient login">로그인</button>
                     
                 <button type="button" class="btn btn-danger bg-gradient sign-up"
                     onclick="location.href='signUp.jsp'">회원가입</button>
         </form>
     </div>
+=======
+                <button type="submit" class="btn btn-primary bg-gradient login" onclick="location.href='main.jsp'">로그인</button>
+                <button type="button" class="btn btn-danger bg-gradient sign-up" onclick="location.href='signUp.jsp'">회원가입</button>
+            </form>
+        </div>
+>>>>>>> 9177ea5 add
     </div>
 
 </body>

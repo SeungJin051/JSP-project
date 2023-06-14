@@ -31,7 +31,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="main.html"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a href="main.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -75,7 +75,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">채팅</a></li>
+                            <li><a class="dropdown-item" href="#">로그아웃</a></li>
                         </ul>
                     </li>
                 </ul>

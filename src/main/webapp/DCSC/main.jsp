@@ -117,7 +117,11 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
                             <li><a class="dropdown-item" href="index.jsp">로그아웃</a></li>
+=======
+                            <li><a class="dropdown-item" href="#">로그아웃</a></li>
+>>>>>>> 9177ea5 add
                             <li><a class="dropdown-item" href="admin_pass.jsp">관리자메뉴</a></li>
                         </ul>
                     </li>
@@ -173,6 +177,7 @@
 	                <!-- Example: -->
 	                <form>
 	                    <div class="mb-3">
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
 	                        <label for="name" class="form-label">제목</label>
 	                        <input type="text" class="form-control" id="title">
 	                    </div>
@@ -236,7 +241,69 @@
 	        </div>
 	        <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">X</button>
+=======
+	                        <label for="name" class="form-label">이름</label>
+	                        <input type="text" class="form-control" id="name">
+	                    </div>
+
+	                    <div class="mb-3">
+	                        <label for="message" class="form-label">내용</label>
+	                        <textarea class="form-control" id="message" rows="3"></textarea>
+	                    </div>
+	                    <button type="submit" class="btn btn-primary">전송</button>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+        
+	<!-- Anonymous Chat Room Modal -->
+	<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="chatModalLabel">동의과학대학교 컴퓨터소프트웨어 익명 채팅방</h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body">
+	                <iframe src="https://service.dongledongle.com/DIT_DCSC" frameborder="0" width="100%" height="100%"></iframe>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+    <hr>
+    <footer class="py-3 my-4">
+        <img src="images/dit.png" alt="" class="dit-img">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    김신영</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    김효민</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    임승진</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    전경민</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <div class="footer-info">
+            <p class="text-center text-muted">주소 | (47230) 부산광역시 부산진구 양지로 54
+                TEL : 051-852-0011~3 FAX : 051-860-3270</p>
+            <p class="text-center text-muted">&copy; 2023 DONG-EUI INSTITUTE OF TECHNOLOGY. ALL RIGHTS RESERVED.
+            </p>
+>>>>>>> 9177ea5 add
         </div>
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
       </div>
     </div>
   </div>
@@ -271,6 +338,8 @@
             <p class="text-center text-muted">&copy; 2023 DONG-EUI INSTITUTE OF TECHNOLOGY. ALL RIGHTS RESERVED.
             </p>
         </div>
+=======
+>>>>>>> 9177ea5 add
     </footer>
 </body>
 

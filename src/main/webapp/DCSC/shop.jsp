@@ -75,7 +75,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">채팅</a></li>
+                            <li><a class="dropdown-item" href="#">로그아웃</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -171,11 +171,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
 
                 </div>
             </div>

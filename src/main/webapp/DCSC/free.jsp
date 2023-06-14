@@ -88,7 +88,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">채팅</a></li>
+                            <li><a class="dropdown-item" href="#">로그아웃</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -140,6 +140,7 @@
 				%>
 				 
         <ul class="container">
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
             <li>
                  <a href="freeWriting.jsp?num=<%=dto.getnum()%>"></a>
                  <div>
@@ -159,6 +160,29 @@
                 </div>
             </li>
            
+=======
+            <li onclick="location.href='freeWriting.jsp'">
+                <div>
+                    <i class="bi bi-person-circle"></i>
+                    <span>임승진</span>
+                    <span> · 34분 전</span> <br> <br>
+                    <h4>데이터베이스를 어떻게 구상해야 할지 모르겠어요</h4>
+                    <p class="text-muted">안녕하세요. 코테를 진행하다가 어디서 틀렸는지 모르겠어서 조언을 구하고자 합니다. 문제와 제가 작성한 코드는 다음과 같습니다.
+                        문제 내 코드 class
+                        Solution { public String solution(String s) { String answer = ""; // 스플릿으로 예시 문자열 배열형태로
+                        반환 String[] sArr = s.spli</p>
+                    <div class="text-end">
+                        <span>#과제</span>
+                        <span>#질문</span>
+                        <i class="bi bi-eye"></i>
+                        <span>23</span>
+                        <i class="bi bi-chat"></i>
+                        <span>2</span>
+                    </div>
+                    <hr>
+                </div>
+            </li>
+>>>>>>> 9177ea5 add
         </ul>
     </div>
     <% } %>
@@ -213,4 +237,8 @@
     </footer>
 </body>
 
+<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
 </html>
+=======
+</html>
+>>>>>>> 9177ea5 add
