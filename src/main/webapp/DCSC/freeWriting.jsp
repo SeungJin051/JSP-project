@@ -1,21 +1,19 @@
-<%@ page import="java.io.File" %>
-<%@ page import="java.util.Enumeration" %>
-<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.board.Dao" %>
 <%@page import="com.board.Dto" %>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="java.sql.*"%>
-
+    pageEncoding="UTF-8"
+    import="java.sql.*"%>
+    
 <%
 	// 함수 호출 
+	request.setCharacterEncoding("utf-8");
+	String num = request.getParameter("num");
+	
 	Dao dao = new Dao();
-	ArrayList<Dto> dtos = dao.list();
+	Dto dto = dao.getOne(num);
 	
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +25,38 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+	img {
+		width: 500px;
+		margin-bottom: 5px;
+	}
+	
+	.hr {
+		border-top: 3px solid #29367c;
+		padding: 10px;
+		background-color: rgb(159, 159, 159, 0.1);
+		
+	}
+	
+	.fw-normal {
+		border-bottom: 3px solid #29367c;
+		color: #A4C7FC;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+	}
+	
+	.frist_container {
+		width: 65%;
+		margin-left: 30%;
+		margin-top: 30px;
+	}
+	
+	.info_text {
+		display: flex;
+		justify-content: space-between;	
+	}
+	
+</style>
 </head>
 <script>
     function w3_open() {
@@ -97,92 +127,59 @@
             </div>
         </div>
     </nav>
-    <div class="mx-5pricing-header p-5 pb-md-4 text-start"
-        style="background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);border-radius: 20px; margin: 35px 100px 35px 100px;">
-        <h1 class=" fw-normal">자유게시판</h1>
-        <p class="fs-5 text-white m-lg-3">
-            <strong>컴퓨터소프트웨어학과</strong>의 개발 및 기술과 관련된 정보, 아이디어, 의견을 쉽게 공유하고 교환하는 공간입니다.
-        </p>
-    </div>
-    <hr>
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th><a href="writing.jsp"><button class="btn btn-primary"><i class="bi bi-pencil-fill"></i>
-                                작성하기</button></a></th>
-                    <th>
-                        <span>1/1페이지</span>
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                            <button type="button" class="btn btn-primary">Previous</button>
-                            <button type="button" class="btn btn-primary">Next</button>
-                        </div>
-                    </th>
-                    <th>
 
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    정렬
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">추천순</a></li>
-                                    <li><a class="dropdown-item" href="#">최신순</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-
-				<%
-				for(Dto dto : dtos) {
-				%>
-				 
-        <ul class="container">
-            <li>
-                 <a href="freeWriting.jsp?num=<%=dto.getnum()%>">
-                 <div>
-                    <i class="bi bi-person-circle"></i>
-                    <span>임승진</span>
-                    <span> · 34분 전</span> <br> <br>
-                    <h4><%=dto.gettitle()%></h4>
-                    <p class="text-muted"><%=dto.getcontent() %></p>
-                    <div class="text-end">
-                        <span><%=dto.gettopik() %></span>
-                        <i class="bi bi-eye"></i>
-                        <span>23</span>
-                        <i class="bi bi-chat"></i>
-                        <span>2</span>
-                    </div>
-                    <hr>
-                </div>
-            </li>
-           
-        </ul>
-    </div>
-    <% } %>
-
-    <!-- 페이징네이션 ++  -->
-    <div class="container ">
-        <div class="row">
-            <div class="col">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </div>
+    <div class="container mx-auto frist_container">
+        <h3 class="fw-normal text-start">자유게시판</h3>
+    	<div class="second_container">
+    		<h5><%=dto.gettitle() %></h5>
+    		<div class="info_text">
+    			<span>
+		    		<span>임승진</span>
+		    		<span> | </span>
+		    		<span>34분 전</span>
+	    		</span>
+	    		<span>
+		    		<span><%=dto.gettopik() %></span>
+		    		<i class="bi bi-eye"></i>
+	                <span>23</span>
+	                <i class="bi bi-chat"></i>
+	                <span>2</span>
+	            </span>
+    		</div>
+    		<hr>
+   			<div class="text_container">
+            	<img src=<%=dto.getimg() %> class="rounded img-fluid d-block">
+            	<p class="text-muted"><%=dto.getcontent() %></p>     
+        	</div>
+        	<!-- 댓글 -->
+			<div class="hr">
+				<div>
+					<h6>
+					<img src="images/profile.png" alt="Avatar" class="img-fluid my-2" style="width: 30px; margin: 0px; border-radius: 50%;" />
+						김신영
+					</h6>
+					<span>그건 알아서 찾아보세요.</span>
+				</div>
+				<hr>
+				
+				<div>
+					<h6>
+					<img src="images/profile.png" alt="Avatar" class="img-fluid my-2" style="width: 30px; margin: 0px; border-radius: 50%;" />
+						임승진
+					</h6>
+					<span>나도 모르겠는데?</span>
+				</div>
+				<hr>			
+			<!-- 댓글 작성 -->
+			<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="댓글을 작성해주세요.">
+			  <button class="btn btn-outline-secondary" type="button" id="button-addon2">작성</button>
+			</div>
+			</div>
         </div>
     </div>
 
-    <hr>
+	<hr>
     <footer class="py-3 my-4">
         <img src="images/dit.png" alt="" class="dit-img">
         <ul>

@@ -52,7 +52,7 @@
         <div class="input-form-backgroud row">
             <div class="input-form col-md-12 mx-auto">
                 <h4 class="mb-3">회원가입</h4>
-                <form class="validation-form" novalidate method="post" action="#">
+                <form class="validation-form" novalidate method="post" action="signUpOk.jsp">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="name">이름</label>
@@ -63,8 +63,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="stNum">학번</label>
-                            <input type="text" class="form-control" id="stNum" name="stNum" placeholder="학번을 입력해주세요."
+                            <label for="studentNumber">학번</label>
+                            <input type="text" class="form-control" id="studentNumber" name="studentNumber" placeholder="학번을 입력해주세요."
                                 value="" required>
                             <div class="invalid-feedback">
                                 학번을 입력해주세요.
@@ -74,7 +74,7 @@
 
                     <div class="mb-3">
                         <label for="pwd">비밀번호</label>
-                        <input type="text" class="form-control" id="pwd" placeholder="비밀번호를 입력해주세요." required>
+                        <input type="text" class="form-control" id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요." required>
                         <div class="invalid-feedback">
                             비밀번호를 입력해주세요.
                         </div>
@@ -82,24 +82,12 @@
 
                     <div class="mb-3">
                         <label for="email">이메일</label>
-                        <input type="text" class="form-control" id="email" placeholder="이메일을 입력해주세요." required>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요." required>
                         <div class="invalid-feedback">
                             이메일을 입력해주세요.
                         </div>
                     </div>
 
-                    <!-- <div class="mb-3">
-                        <label for="address">주소</label>
-                        <input type="text" class="form-control" id="address" placeholder="서울특별시 강남구" required>
-                        <div class="invalid-feedback">
-                            주소를 입력해주세요.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="address2">상세주소<span class="text-muted">&nbsp;(필수 아님)</span></label>
-                        <input type="text" class="form-control" id="address2" placeholder="상세주소를 입력해주세요.">
-                    </div> -->
 
                     <div class="row">
                         <div class="col-md-8 mb-3">
@@ -117,12 +105,12 @@
                             </div>
                             <br>
                             <label for="root">직책</label>
-                            <select class="custom-select d-block w-100" id="root" name="grade" required
+                            <select class="custom-select d-block w-100" id="root" name="position" required
                                 aria-label="select example">
                                 <option value="">직책을 선택해주세요.</option>
-                                <option value="1학년">재학생</option>
-                                <option value="2학년">휴학생</option>
-                                <option value="2학년">졸업생</option>
+                                <option value="재학생">재학생</option>
+                                <option value="휴학생">휴학생</option>
+                                <option value="졸업생">졸업생</option>
                                 <option value="교수">교수</option>
                                 <option value="조교">조교</option>
                             </select>
