@@ -53,10 +53,9 @@
 </script>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
-            <a class=" navbar-brand" href="#"></a>
+            <a href="admin_sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -65,19 +64,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="sign_up.jsp">회원가입관리</a>
+                        <a class="nav-link" href="admin_sign_up.jsp">회원가입관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="member.jsp">회원관리</a>
+                        <a class="nav-link" href="admin_member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="graduateboard.jsp">게시글관리</a>
+                        <a class="nav-link" href="admin_board.jsp">게시글관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.jsp">장터관리</a>
+                        <a class="nav-link" href="admin_shop.jsp">장터관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="announcement.jsp">공지사항</a>
+                        <a class="nav-link" href="admin_writing.jsp">공지사항</a>
                     </li>
              
                     <li class="nav-item">

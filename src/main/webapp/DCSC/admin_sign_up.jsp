@@ -1,8 +1,11 @@
+<%@page import="java.util.List"%>
+<%@page import="com.board.LoginDAO"%>
+<%@page import="com.board.LoginDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<title>회원가입관리</title>
+<title>DCSC</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/NavFooter.css">
@@ -12,9 +15,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- 부트스트랩  -->
-
 <style>
-    
     @media (max-width: 800px) {
 
         footer {
@@ -24,9 +25,6 @@
     }
     .member{
         margin-top: 100px;
-    }
-    button{
-    	margin-right: 20px;
     }
 </style>
 <script>
@@ -58,10 +56,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="sign_up.jsp">회원가입관리</a>
+                        <a class="nav-link" href="admin_sign_up.jsp">회원가입관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="member.jsp">회원관리</a>
+                        <a class="nav-link" href="admin_member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="graduateboard.jsp">게시글관리</a>
@@ -83,34 +81,42 @@
     </nav>
 
     <div class="container member">
-        <h1 >가입관리</h1>
+        <h1>가입관리</h1>
+        <!-- 관리자 페이지 -->
         <table class="table talbe-hover">
             <tbody>
                 <tr>
-                    <td><B>학번</td>
-                    <td><B>이름</td>
-                    <td><b>이메일</td>
-                    <td><b>학년</td>
-                    <td><b>직책</td>
-                    <td><b>가입승인</td>
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>이메일</th>
+                    <th>학년</th>
+                    <th>직책</th>
+                    <th>가입승인</th>
                 </tr>
-    
+                <% 
+                // 회원가입 신청 목록을 조회하고 표시합니다.
+                LoginDAO loginDAO = new LoginDAO();
+                List<LoginDTO> joinRequests = loginDAO.getJoinRequests();
+                for (LoginDTO joinRequest : joinRequests) {
+                %>
                 <tr>
-                    <td>202231747</td>
-                    <td>김신영</td>
-                    <td>sy010706@naver.com</td>
-                    <td>2학년</td>
-                    <td>병장</td>
+                    <td><%= joinRequest.getStudentNumber() %></td>
+                    <td><%= joinRequest.getName() %></td>
+                    <td><%= joinRequest.getEmail() %></td>
+                    <td><%= joinRequest.getGrade() %></td>
+                    <td><%= joinRequest.getPosition() %></td>
                     <td>
-                    <button class="btn btn-primary">승인</button >
-                    <button class="btn btn-danger">취소</button>
+                        <form action="approval.jsp" method="post">
+                            <input type="hidden" name="studentNumber" value="<%= joinRequest.getStudentNumber() %>">
+                            <button type="submit" name="action" value="approve" class="btn btn-primary">승인</button>
+                            <button type="submit" name="action" value="cancel" class="btn btn-danger">취소</button>
+                        </form>
                     </td>
                 </tr>
+                <% } %>
             </tbody>
         </table>
     </div>
-
-
 
 </body>
 

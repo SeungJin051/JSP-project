@@ -33,6 +33,7 @@
         </h1>
         <p>동의과학대학교 컴퓨터소프트웨어과 커뮤니티에 오신걸 환영합니다!!</p>
     </div>
+
     <p> test</p>
 
     <div class="box container">
@@ -40,10 +41,10 @@
             <div class="container">
                 <img src="images/indexBanner.png" alt="" width="460px">
             </div>
-            <form action="#" method="post">
+            <form action="loginPro.jsp" method="get">
                 <div class="mb-3">
-                    <label for="stNum" class="form-label">학번</label>
-                    <input type="text" class="form-control" id="stNum" placeholder="학번" name="stNu" maxlength="10"
+                    <label for="studentNumber" class="form-label">학번</label>
+                    <input type="text" class="form-control" id="studentNumber" placeholder="학번" name="studentNumber" maxlength="10"
                         required>
                 </div>
                 <div class="mb-3">
@@ -51,8 +52,8 @@
                     <input type="password" class="form-control" id="pwd" placeholder="비밀번호" name="pwd" required
                         maxlength="16">
                 </div>
-                <button type="submit" class="btn btn-primary bg-gradient login"
-                    onclick="location.href='main.jsp'">로그인</button>
+                <button type="submit" class="btn btn-primary bg-gradient login">로그인</button>
+                    
                 <button type="button" class="btn btn-danger bg-gradient sign-up"
                     onclick="location.href='signUp.jsp'">회원가입</button>
         </form>

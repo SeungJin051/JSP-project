@@ -1,9 +1,27 @@
+<%@page import="com.board.LoginDAO" %>
+<%@page import="com.board.LoginDTO" %>
+<%@page import="java.util.ArrayList"%>
+<%@ page session="true" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%-- <%@ page import="org.jsoup.Jsoup" %>
-<%@ page import="org.jsoup.nodes.Document" %>
-<%@ page import="org.jsoup.nodes.Element" %>
-<%@ page import="org.jsoup.select.Elements" %> --%>
+    pageEncoding="UTF-8"
+    import="java.sql.*"%>
+
+
+
+<%
+   // 함수 호출 
+   request.setCharacterEncoding("utf-8");
+   String name = request.getParameter("name");
+   
+   LoginDAO dao = new LoginDAO();
+   LoginDTO dto = dao.getOne(name);
+   
+   String NAME = (String) session.getAttribute("NAME");
+   String GRADE = (String) session.getAttribute("GRADE");
+
+   
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +36,38 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- 부트스트랩  -->
 <title>DCSC</title>
+	
 <style>
 	.container {
 	  padding: 0;
+	}
+
+	@media (max-width: 400px) {
+	  #map,
+	  iframe {
+		max-width: 400px;	  
+		}
+		
+	  #map {
+	  	padding-bottom: 20px;
+	  }
+	}
+	
+	.map_video {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+	
+	.frist_view {
+		padding-bottom: 40px;
+		border-bottom: 1px solid #ddd;
+		margin-top: 60px;
+		margin-bottom: 30px;
+	}
+	
+	.dit_ac {
+		margin-bottom: 30px;
 	}
 </style>
 
@@ -70,7 +117,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">채팅</a></li>
+                            <li><a class="dropdown-item" href="index.jsp">로그아웃</a></li>
                             <li><a class="dropdown-item" href="admin_pass.jsp">관리자메뉴</a></li>
                         </ul>
                     </li>
@@ -79,49 +126,114 @@
         </div>
     </nav>
 
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <div class="px-4 pt-5 text-center frist_view">
+    	<img src="images/kakaoLogo.png" class="" onclick="location='https://pf.kakao.com/_gYxlVK'" style="width: 105px; margin-top: -50px; border-radius: 10px;">
         <h1 class="display-4 fw-bold">DCSC</h1>
+        <p class="mb-1">안녕하세요 <b><%=GRADE%> <%=NAME%></b>님!</p>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">동의과학대학교 컴퓨터소프트웨어과 학생들을 위한 커뮤니티입니다.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    문의하기
-                </button>        		
+               <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+	              	문의하기
+	            </button>
+	            <button type="button" class="btn btn-warning btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#chatModal">
+	                익명 채팅방
+	            </button>
             </div>
 		</div>		
 	</div>
 	
-	<div class="container">
-	        <div id="map" style="width:500px;height:400px;"></div>
- 	</div>
+	<div class="container map_video">
+	  <div class="row justify-content-center">
+	    <div class="col-md-6">
+	      <div id="map" style="width: 550px; height: 400px;"></div>
+	    </div>
+	    <div class="col-md-6">
+	      <iframe width="650px" height="400px" src="https://www.youtube.com/embed/pOP6scBvlOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	    </div>
+	  </div>
+	</div>
 		
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">문의</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">제목</label>
-                                <input type="text" class="form-control" id="recipient-name" placeholder="제목을 입력해주세요.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">내용</label>
-                                <textarea class="form-control" id="message-text" placeholder="내용을 입력해주세요."></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">전송</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    </div>
-                </div>
-            </div>
+	<div class="container dit_ac">
+	  <div class="d-flex justify-content-center">
+	    <iframe width="850px" height="500px" src="https://www.dit.ac.kr/_vr/dept0606/01/tour.html" frameborder="0"></iframe>
+	  </div>
+	</div>
+	
+	<!-- Contact Us Modal -->
+	<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body">
+	                <!-- Add your contact form here -->
+	                <!-- Example: -->
+	                <form>
+	                    <div class="mb-3">
+	                        <label for="name" class="form-label">이름</label>
+	                        <input type="text" class="form-control" id="name">
+	                    </div>
+
+	                    <div class="mb-3">
+	                        <label for="message" class="form-label">내용</label>
+	                        <textarea class="form-control" id="message" rows="3"></textarea>
+	                    </div>
+	                    <button type="submit" class="btn btn-primary">전송</button>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+        
+	<!-- Anonymous Chat Room Modal -->
+	<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="chatModalLabel">동의과학대학교 컴퓨터소프트웨어 익명 채팅방</h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body">
+	                <iframe src="https://service.dongledongle.com/DIT_DCSC" frameborder="0" width="100%" height="100%"></iframe>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+    <hr>
+    <footer class="py-3 my-4">
+        <img src="images/dit.png" alt="" class="dit-img">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    김신영</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    김효민</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    임승진</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="bi bi-github"></i>
+                    전경민</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <div class="footer-info">
+            <p class="text-center text-muted">주소 | (47230) 부산광역시 부산진구 양지로 54
+                TEL : 051-852-0011~3 FAX : 051-860-3270</p>
+            <p class="text-center text-muted">&copy; 2023 DONG-EUI INSTITUTE OF TECHNOLOGY. ALL RIGHTS RESERVED.
+            </p>
         </div>
+    </footer>
 </body>
 
 <script>
