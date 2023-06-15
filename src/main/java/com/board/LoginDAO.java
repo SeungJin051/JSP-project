@@ -1,6 +1,7 @@
 package com.board;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -78,6 +79,34 @@ public class LoginDAO {
 
 	        return name;
 	    }
+	 
+	 public String getEmail(String studentNumber) throws Exception {
+	        Connection conn = null;
+	        PreparedStatement stmt = null;
+	        ResultSet rs = null;
+	        String email = null;
+
+	        try {
+	            conn = getConnection();  // getConnection() 메서드는 데이터베이스 연결을 수행합니다.
+	            String query = "SELECT email FROM students WHERE studentNumber = ?";
+	            stmt = conn.prepareStatement(query);
+	            stmt.setString(1, studentNumber);
+	            rs = stmt.executeQuery();
+
+	            if (rs.next()) {
+	            	email = rs.getString("email");
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } finally {
+	            closeResultSet(rs);  // closeResultSet(), closeStatement(), closeConnection() 메서드는 자원 해제를 수행합니다.
+	            closeStatement(stmt);
+	            closeConnection(conn);
+	        }
+
+	        return email;
+	    }
+	 
 	
 	/**
 	 * @param conn

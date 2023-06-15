@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    	String name = (String) session.getAttribute("NAME");
+    	String grade = (String) session.getAttribute("GRADE");
+    	String email = (String) session.getAttribute("EMAIL");
+    	String studentNumber = (String) session.getAttribute("studentNumber");
+    %>
 <!DOCTYPE html>
 <html>
 <title>DCSC</title>
@@ -22,7 +28,7 @@
                                 <img src="images/profile.png" alt="Avatar" class="img-fluid my-5"
                                     style="width: 80px; border-radius: 50%;" />
 
-                                <h5>임승진</h5> <br>
+                                <h5><%= name %></h5> <br>
                                 <div style="width: 200px; margin-left: 18px;">
                                     <input class="form-control form-control-sm" id="formFileSm" type="file"/>
                                 </div>
@@ -34,18 +40,18 @@
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>이메일</h6>
-                                            <p class="text-muted">seungjin051@gmail.com</p>
+                                            <p class="text-muted"><%= email %></p>
                                         </div>
                                         <div class="col-6 mb-3">
                                             <h6>학번</h6>
-                                            <p class="text-muted">202230752</p>
+                                            <p class="text-muted"><%=studentNumber %></p>
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>등급</h6>
-                                            <p class="text-muted">재학생</p>
+                                            <p class="text-muted"><%=grade %></p>
                                         </div>
                                         <button class="btn btn-danger bg-gradient" type="button"
                                             onclick="location.href='main.jsp'">저장하고 나가기</button>
