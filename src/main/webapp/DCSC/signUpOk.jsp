@@ -23,7 +23,7 @@
   	
 		dao.insertLogin(dto);
     
-    	// 회원 가입이 성공했을 때에만 리디렉션을 수행
+    	// 회원 가입이 성공했을 때에만 리디렉션을 수행.
     	response.sendRedirect("index.jsp");
 	%>
   
