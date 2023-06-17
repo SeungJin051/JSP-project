@@ -5,6 +5,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.board.Dao" %>
 <%@page import="com.board.Dto" %>
+<%@page import="com.board.LoginDTO"%>
+<%@page import="com.board.LoginDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
@@ -13,7 +15,7 @@
 	// 함수 호출 
 	Dao dao = new Dao();
 	ArrayList<Dto> dtos = dao.list();
-	
+
 %>
 
 <!DOCTYPE html>

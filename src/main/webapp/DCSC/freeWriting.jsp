@@ -148,9 +148,14 @@
     		</div>
     		<hr>
    			<div class="text_container">
-            	<img src=<%=dto.getimg() %> class="rounded img-fluid d-block">
+            	<img src="<%=dto.getimg() %>" class="rounded img-fluid d-block">
+
             	<p class="text-muted"><%=dto.getcontent() %></p>     
+            	
         	</div>
+        	<div class="text_container">
+    	
+        	
         	<!-- 댓글 -->
 			<div class="hr">
 				<div>

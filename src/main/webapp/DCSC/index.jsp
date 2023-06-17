@@ -53,7 +53,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary bg-gradient login">로그인</button>
                     
-                <button type="button" class="btn btn-danger bg-gradient sign-up"
+                <button type="button" class="btn btn-danger bg-gradient"
                     onclick="location.href='signUp.jsp'">회원가입</button>
         </form>
     </div>
