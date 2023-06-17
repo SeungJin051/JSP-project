@@ -24,6 +24,87 @@ public class LoginDAO {
 		
 	}
 	
+	public String getposition(String studentNumber) throws Exception {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String position = null;
+
+        try {
+            conn = getConnection();  // getConnection() 메서드는 데이터베이스 연결을 수행합니다.
+            String query = "SELECT position FROM students WHERE studentNumber = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, studentNumber);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+            	position = rs.getString("position");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);  // closeResultSet(), closeStatement(), closeConnection() 메서드는 자원 해제를 수행합니다.
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+
+        return position;
+    }
+	
+	public String getemail(String studentNumber) throws Exception {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String email = null;
+
+        try {
+            conn = getConnection();  // getConnection() 메서드는 데이터베이스 연결을 수행합니다.
+            String query = "SELECT email FROM students WHERE studentNumber = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, studentNumber);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+            	email = rs.getString("email");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);  // closeResultSet(), closeStatement(), closeConnection() 메서드는 자원 해제를 수행합니다.
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+
+        return email;
+    }
+	
+	public String getstudentNumber(String name) throws Exception {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String studentNumber = null;
+
+        try {
+            conn = getConnection();  // getConnection() 메서드는 데이터베이스 연결을 수행합니다.
+            String query = "SELECT studentNumber FROM students WHERE name = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, name);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+            	studentNumber = rs.getString("studentNumber");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);  // closeResultSet(), closeStatement(), closeConnection() 메서드는 자원 해제를 수행합니다.
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+
+        return studentNumber;
+    }
+	
 	 public String getGrade(String studentNumber) throws Exception {
 	        Connection conn = null;
 	        PreparedStatement stmt = null;
@@ -79,25 +160,17 @@ public class LoginDAO {
 	        return name;
 	    }
 	
-	/**
-	 * @param conn
-	 */
+
 	private void closeConnection(Connection conn) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	/**
-	 * @param stmt
-	 */
 	private void closeStatement(PreparedStatement stmt) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	/**
-	 * @param rs
-	 */
 	private void closeResultSet(ResultSet rs) {
 		// TODO Auto-generated method stub
 		
@@ -233,4 +306,42 @@ public class LoginDAO {
 	            e.printStackTrace();
 	        }
 	    }
+	    
+	    public int profile(String studentNumber, String img) throws Exception {
+	    	String sql = "UPDATE students SET img = ? WHERE studentNumber = ?";
+	    	try (Connection conn = getConnection();
+	    	     PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	    	    pstmt.setString(1, img);
+	    	    pstmt.setString(2, studentNumber);
+	    	    pstmt.executeUpdate();
+	    	} catch (SQLException e) {
+	    	    e.printStackTrace();
+	    	}
+
+	        return -1; //에러 발생
+	    }
+	    
+	    public LoginDTO getStudentProfile(String studentNumber) throws Exception {
+	        LoginDTO dto = new LoginDTO(); // 기본 객체 생성
+
+	        String sql = "SELECT * FROM students WHERE studentNumber = ?";
+	        try (Connection conn = getConnection();
+	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	            pstmt.setString(1, studentNumber);
+	            try (ResultSet rs = pstmt.executeQuery()) {
+	                if (rs.next()) {
+	                    dto.setName(rs.getString("name"));
+	                    dto.setStudentNumber(rs.getString("studentNumber"));
+	                    dto.setEmail(rs.getString("email"));
+	                    dto.setImg(rs.getString("img"));
+	                    // 필요한 다른 정보들도 설정해줄 수 있습니다.
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        return dto;
+	    }
+	    
+
 }	

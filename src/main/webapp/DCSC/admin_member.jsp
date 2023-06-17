@@ -52,7 +52,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a href="admin_sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a href="sign_up.jsp"><img src="images/dit.png" alt="" class="dit-img"></a>
+            <a class=" navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -67,13 +68,13 @@
                         <a class="nav-link" href="admin_member.jsp">회원관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_board.jsp">게시글관리</a>
+                        <a class="nav-link" href="graduateboard.jsp">게시글관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_shop.jsp">장터관리</a>
+                        <a class="nav-link" href="shop.jsp">장터관리</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_writing.jsp">공지사항</a>
+                        <a class="nav-link" href="announcement.jsp">공지사항</a>
                     </li>
              
                     <li class="nav-item">
@@ -84,6 +85,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container member">
         <h1>회원관리</h1>
         <table class="table talbe-hover">
@@ -104,20 +106,12 @@
                 for (LoginDTO member : approvedMembers) {
                 %>
                 <tr>
-<<<<<<< Upstream, based on branch 'main' of https://github.com/SeungJin051/JSP-project.git
                     <td><%= member.getStudentNumber() %></td>
                     <td><%= member.getName() %></td>
                     <td><%= member.getEmail() %></td>
                     <td><%= member.getGrade() %></td>
                     <td><%= member.getPosition() %></td>
                     
-=======
-                    <td><A href="update.jsp">202231747</A></td>
-                    <td>김신영</td>
-                    <td>sy010706@asefd.com</td>
-                    <td>2학년</td>
-                    <td>병장</td>
->>>>>>> 9177ea5 add
                 </tr>
                 <% } %>
             </tbody>
