@@ -14,10 +14,14 @@ public class LoginDTO {
 	private String email;
 	private String grade;
 	private String position;
-	
+	private String img;
 	
 	public LoginDTO() {
 		
+		
+	}
+public LoginDTO(String img) {
+		this.img = img;
 		
 	}
 	
@@ -75,5 +79,12 @@ public class LoginDTO {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-		
+	public String getImg() {
+		return img;
+	}
+	
+	public void setImg(String img) {
+		this.img = img;
+	}
+	
 }

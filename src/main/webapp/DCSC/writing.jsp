@@ -26,6 +26,7 @@
 </script>
 
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <a href="main.html"><img src="images/dit.png" alt="" class="dit-img"></a>
@@ -92,7 +93,7 @@
             name님 지식공유 미래 개발자들과 함께 궁금증을 해결하세요.
         </p>
     </div>
-    <form action="writingPro.jsp" method="post">
+    <form action="writingPro.jsp" method="post" enctype="multipart/form-data">
         <div class="input-group mb-3">
             <select name="topik" class="form-select">
                 <option selected>토픽을 선택하세요..</option>
@@ -107,7 +108,7 @@
         </div>
         <div>
             <label for="formFileLg" class="form-label">첨부파일</label>
-            <input class="form-control form-control-lg" id="formFileLg" type="file" name="img" onchange="readURL(this);"/>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" name="img"  onchange="readURL(this);"/>
             <img id="preview" src="#" width="300" height="250" alt="선택된 이미지가 없습니다"
                  style="align-content: flex-end; margin: 20px 0px 20px 0px;">
         </div>

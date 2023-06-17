@@ -262,4 +262,43 @@ public class LoginDAO {
 	            e.printStackTrace();
 	        }
 	    }
+	    
+	    public int profile(String studentNumber, String img) throws Exception {
+	    	String sql = "UPDATE students SET img = ? WHERE studentNumber = ?";
+	    	try (Connection conn = getConnection();
+	    	     PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	    	    pstmt.setString(1, img);
+	    	    pstmt.setString(2, studentNumber);
+	    	    pstmt.executeUpdate();
+	    	} catch (SQLException e) {
+	    	    e.printStackTrace();
+	    	}
+
+	        return -1; //에러 발생
+	    }
+	    
+	    public LoginDTO getStudentProfile(String studentNumber) throws Exception {
+	        LoginDTO dto = null;
+	        String sql = "SELECT * FROM students WHERE studentNumber = ?";
+	        try (Connection conn = getConnection();
+	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	            pstmt.setString(1, studentNumber);
+	            try (ResultSet rs = pstmt.executeQuery()) {
+	                if (rs.next()) {
+	                    dto = new LoginDTO();
+	                    dto.setName(rs.getString("name"));
+	                    dto.setStudentNumber(rs.getString("studentNumber"));
+	                    dto.setEmail(rs.getString("email"));
+	                    dto.setImg(rs.getString("img"));
+	                    // 필요한 다른 정보들도 설정해줄 수 있습니다.
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        return dto;
+	    }
+
+	    
 }	
+	
