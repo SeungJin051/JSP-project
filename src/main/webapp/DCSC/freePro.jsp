@@ -10,14 +10,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import = "java.sql.*"%>
-<%	
+<%   
 request.setCharacterEncoding("utf-8");
+String num = request.getParameter("num");
 String topik = request.getParameter("topik");
 String title = request.getParameter("title");
 String img = request.getParameter("img");
 String content = request.getParameter("content");
 
-Dto dto = new Dto(topik, title, img, content);
+Dto dto = new Dto(num, topik, title, img, content);
 Dao dao = new Dao();
 dao.getOne(title);
 

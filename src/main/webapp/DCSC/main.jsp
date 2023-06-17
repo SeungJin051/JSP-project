@@ -113,7 +113,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="profile.jsp">프로필</a></li>
-                            <li><a class="dropdown-item" href="#">나의 문의내역</a></li>
+        					<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal">나의 문의내역</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -173,8 +173,8 @@
 	                <!-- Example: -->
 	                <form>
 	                    <div class="mb-3">
-	                        <label for="name" class="form-label">이름</label>
-	                        <input type="text" class="form-control" id="name">
+	                        <label for="name" class="form-label">제목</label>
+	                        <input type="text" class="form-control" id="title">
 	                    </div>
 
 	                    <div class="mb-3">
@@ -197,11 +197,49 @@
 	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	            </div>
 	            <div class="modal-body">
-	                <iframe src="https://service.dongledongle.com/DIT_DCSC" frameborder="0" width="100%" height="100%"></iframe>
+	                <iframe src="https://service.dongledongle.com/DIT_DCSC" width="100%" height="100%"></iframe>
 	            </div>
 	        </div>
 	    </div>
 	</div>
+	
+	<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    	<div class="modal-dialog modal-xl">
+      		<div class="modal-content">
+	        <div class="modal-header">
+			          <h5 class="modal-title" id="exampleModalLabel">나의 문의내역</h5>
+		          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		        </div>
+	        <div class="modal-body">
+				<table class="table table-striped">
+					  <thead>
+					    <tr>
+					      <th scope="col">제목</th>
+					      <th scope="col">내용</th>
+					      <th scope="col">날짜</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>프로필 사진이 이상해요</td>
+					      <td>프로필 사진 저장 기능이 먹통이에요.</td>
+					      <td>20223년 6월 17일 19시 30분</td>
+					    </tr>
+					    <tr>
+					      <td>게시판이 이상해요</td>
+					      <td>게시판 수정하는 기능이 이상해요</td>
+					      <td>20223년 6월 16일 시 30분</td>
+					    </tr>
+
+					  </tbody>
+				</table>
+	        </div>
+	        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <hr>
     <footer class="py-3 my-4">
